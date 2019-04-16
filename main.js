@@ -19,6 +19,7 @@ startButton.addEventListener("click",()=>{
   paragraph.style.display="block";
   footer.style.display="block";
 });
+
 const movies = document.getElementById('movies');
 const apiKey = '789019a0';
 const baseURL = 'http://www.omdbapi.com/?apikey='+apiKey;
