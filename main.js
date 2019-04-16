@@ -44,4 +44,4 @@ const url = baseURL +'&s='+ searchBy +'&page='+ page;
 
 searchMovies("acción",2);
 
-searchMovies("ficción",15);*/
+searchMovies("ficción",15);
