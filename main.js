@@ -12,7 +12,7 @@ select.style.display="none";
 paragraph.style.display="none";
 footer.style.display="block";
 
-startButton.addEventListener("click",()=>{
+startButton.addEventListener("click",() => {
   startButton.style.display="none";
   welcomePage.style.display="none";
   select.style.display="block";
@@ -60,3 +60,25 @@ const url = baseURL +'&s='+ searchBy +'&page='+ page;
   }
   
   select.addEventListener('change', selectOption);
+
+
+  // const searchPlotById = async(id) => {
+  //      const url2 = baseURL +'&i='+ id +'&plot=full';
+  //      const response = await fetch(url2);
+  //      const json = await response.json();
+  //      console.log(json);
+  //      }
+  
+  // searchMovies('kill',1).then(data => data.forEach(movie => {
+  //   searchPlotById(movie.imdbID);
+  // }));
+
+
+
+
+
+
+
+
+
+  
