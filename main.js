@@ -27,21 +27,39 @@ const searchMovies = async(searchBy,page) => {
 const url = baseURL +'&s='+ searchBy +'&page='+ page;
    const response = await fetch(url);
    const json = await response.json();
-   const result = JSON.parse(JSON.stringify(json));
-   return result.Search;
+   return json.Search;
    }
 
-   const printData = data => {
+   const printData = (data) => {
        let string = '';
        data.forEach(movie => {
            string += `<div>
            <p>Title:${movie.Title}</p>
-           <img src="${movie.Poster}" alt="poster">
+           <p>Tipo: ${movie.Type}</p>
+           <img src="${movie.Poster}" alt="poster">           
            </div>`
        })
        return document.getElementById('movies').innerHTML = string;
-   }
+    };
+
+  const selectOption = () => {
+    let word = select.value;
+    switch(word) {
+      case 'Matar':
+        searchMovies('kill',1).then(data => printData(data))
+      break;
+      case 'Guerra':
+        searchMovies('war',1).then(data => printData(data))
+      break;
+      case 'Humor':
+        searchMovies('comedy',1).then(data => printData(data));
+      break;
+    }
+  }
+  
+  select.addEventListener('change', selectOption);
 
 
-
-   searchMovies('accion',1).then(data => printData(data));
+  // for(let p = 1; p < 100; p++) {
+  //   searchMovies('ficcion',p).then(data => console.log(data));
+  // }
