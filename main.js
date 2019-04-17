@@ -58,8 +58,3 @@ const url = baseURL +'&s='+ searchBy +'&page='+ page;
   }
   
   select.addEventListener('change', selectOption);
-
-
-  // for(let p = 1; p < 100; p++) {
-  //   searchMovies('ficcion',p).then(data => console.log(data));
-  // }
